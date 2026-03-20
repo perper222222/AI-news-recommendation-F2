@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI News Recommendation</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      margin-top: 120px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 400;
+      color: #cfd8dc;
+    }
+
+    .box {
+      margin-top: 40px;
+      padding: 30px;
+      border-radius: 15px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      display: inline-block;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    input {
+      width: 80%;
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #00c6ff;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0072ff;
+    }
+
+    .ai-label {
+      font-size: 14px;
+      color: #90caf9;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>🤖 AI News Recommendation System</h1>
+    <h2>개인 맞춤 뉴스 추천을 위해 좌석번호를 입력해주세요</h2>
+
+    <div class="box">
+      <div class="ai-label">AI 분석 진행 중...</div>
+
+      <input type="number" id="userInput" placeholder="좌석 번호 입력">
+
+      <br>
+
+      <button onclick="goNext()">AI 추천 보기</button>
+    </div>
+  </div>
+
+  <script>
+    function goNext() {
+      var input = document.getElementById("userInput").value;
+
+      if (input !== "") {
+        window.location.href = "result.html?seat=" + input;
+      } else {
+        alert("좌석번호를 입력해주세요");
+      }
+    }
+  </script>
+
+</body>
+</html>

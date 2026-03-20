@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 추천 결과</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 26px;
+    }
+
+    .ai-box {
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      display: inline-block;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .loading {
+      font-size: 14px;
+      color: #90caf9;
+      margin-bottom: 15px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    .explanation {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #cfd8dc;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>🤖 AI 맞춤 뉴스 추천 결과</h1>
+
+    <div class="ai-box">
+      <div class="loading" id="loadingText">
+        AI가 당신의 선호도를 분석 중입니다...
+      </div>
+
+      <img id="resultImage" src="" style="display:none;">
+
+      <div class="explanation" id="explanationText" style="display:none;">
+        당신의 입력 데이터를 기반으로, 해당 뉴스가 가장 높은 관련성을 보였습니다.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var params = new URLSearchParams(window.location.search);
+    var seat = params.get("seat");
+
+    var img = document.getElementById("resultImage");
+    var loading = document.getElementById("loadingText");
+    var explanation = document.getElementById("explanationText");
+
+    // 模拟AI分析延迟（增强真实感）
+    setTimeout(function() {
+      img.src = "F1.jpeg";  // 你的图片
+      img.style.display = "block";
+
+      loading.innerText = "추천 완료 ✔";
+      explanation.style.display = "block";
+    }, 1500);
+  </script>
+
+</body>
+</html>
