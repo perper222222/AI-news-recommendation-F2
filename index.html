@@ -78,12 +78,12 @@
 
   <div class="container">
     <h1>🤖 AI News Recommendation System</h1>
-    <h2>개인 맞춤 뉴스 추천을 위해 좌석번호를 입력해주세요</h2>
+    <h2>개인 맞춤 뉴스 추천을 위해 자리 번호를 입력해주세요</h2>
 
     <div class="box">
       <div class="ai-label">AI 분석 진행 중...</div>
 
-      <input type="number" id="userInput" placeholder="좌석 번호 입력">
+      <input type="number" id="userInput" placeholder="자리 번호 입력">
 
       <br>
 
@@ -98,7 +98,7 @@
       if (input !== "") {
         window.location.href = "result.html?seat=" + input;
       } else {
-        alert("좌석번호를 입력해주세요");
+        alert("자리 번호를 입력해주세요");
       }
     }
   </script>
